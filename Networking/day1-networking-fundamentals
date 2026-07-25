@@ -1,0 +1,288 @@
+# Day 1 - Networking Fundamentals
+
+## Introduction
+
+Computer networks allow devices to communicate and share data with each other. From sending a message on WhatsApp to browsing websites, networking is the foundation of modern communication.
+
+Today, I learned about network types, data transmission, bandwidth, throughput, and latency.
+
+---
+
+# 1. Network Types
+
+## What is a Network?
+
+A network is a group of connected devices that exchange data.
+
+Example:
+- Laptop
+- Smartphone
+- Printer
+- Server
+
+These devices communicate using networking standards and protocols.
+
+---
+
+## The Internet
+
+The Internet is **not owned by any single person or organization**.
+
+It is a massive collection of interconnected networks (called an **internetwork**) that communicate using common standards.
+
+Different communication media include:
+
+- Telephone cables
+- Fiber-optic cables
+- Wireless communication
+- Satellite links
+
+---
+
+## Common Types of Networks
+
+### 1. Home Network
+
+A small network used inside homes.
+
+Examples:
+- Laptop
+- Mobile phone
+- Smart TV
+- Wi-Fi Router
+
+Purpose:
+- Internet access
+- File sharing
+- Printer sharing
+
+---
+
+### 2. SOHO Network
+
+SOHO stands for **Small Office/Home Office**.
+
+Used by:
+- Small businesses
+- Freelancers
+- Remote workers
+
+It allows users to connect to company resources securely.
+
+---
+
+### 3. Enterprise Network
+
+Large organizations use enterprise networks.
+
+Characteristics:
+- Multiple buildings or locations
+- Hundreds or thousands of computers
+- Centralized management
+- High security
+
+Examples:
+- Universities
+- Banks
+- Government offices
+- IT Companies
+
+---
+
+### 4. Internet of Things (IoT)
+
+Many everyday devices are connected to the Internet.
+
+Examples:
+
+- Smartphones
+- Tablets
+- Smart TVs
+- Smart watches
+- Gaming consoles
+- Security cameras
+- Smart cars
+- Medical devices
+- RFID tags
+- Sensors
+
+These devices collect and exchange data automatically.
+
+---
+
+# 2. Data Transmission
+
+Data transmission is the process of transferring information from one device to another.
+
+---
+
+## Types of Personal Data
+
+### 1. Volunteered Data
+
+Data that users intentionally provide.
+
+Examples:
+- Social media posts
+- Photos
+- Videos
+- Profile information
+
+---
+
+### 2. Observed Data
+
+Data collected by monitoring user activities.
+
+Examples:
+- GPS location
+- Browsing history
+- Device usage
+- Search history
+
+---
+
+### 3. Inferred Data
+
+Data generated through analysis of other collected data.
+
+Examples:
+- Credit score
+- Shopping recommendations
+- Personalized advertisements
+- Risk analysis
+
+---
+
+## What is a Bit?
+
+A **bit** (Binary Digit) is the smallest unit of data.
+
+A bit can have only one of two values:
+
+- 0
+- 1
+
+Everything stored in computers is ultimately represented using bits.
+
+---
+
+## Types of Signal Transmission
+
+### Electrical Signals
+
+- Travel through copper cables.
+- Data is transmitted as electrical pulses.
+
+Examples:
+- Ethernet cables
+
+---
+
+### Optical Signals
+
+- Use light pulses.
+- Travel through fiber-optic cables.
+- Extremely fast with low signal loss.
+
+---
+
+### Wireless Signals
+
+Transmit data through the air using:
+
+- Radio waves
+- Microwaves
+- Infrared waves
+
+Examples:
+
+- Wi-Fi
+- Bluetooth
+- Mobile networks
+
+---
+
+# 3. Bandwidth and Throughput
+
+Although these terms are often confused, they are different.
+
+---
+
+## Bandwidth
+
+Bandwidth is the **maximum amount of data** that can be transmitted over a network in one second.
+
+It represents the network's capacity.
+
+Common units:
+
+- Kbps (Kilobits per second)
+- Mbps (Megabits per second)
+- Gbps (Gigabits per second)
+
+Higher bandwidth means the network can carry more data.
+
+---
+
+## Throughput
+
+Throughput is the **actual amount of data** successfully transferred.
+
+It is usually lower than bandwidth because of:
+
+- Network congestion
+- Hardware limitations
+- Packet loss
+- Signal interference
+
+---
+
+## Difference Between Bandwidth and Throughput
+
+| Bandwidth | Throughput |
+|-----------|------------|
+| Maximum capacity | Actual speed achieved |
+| Theoretical value | Real-world value |
+| Measured in bps | Measured in bps |
+
+Example:
+
+Bandwidth = 100 Mbps
+
+Actual download speed = 72 Mbps
+
+Throughput = 72 Mbps
+
+---
+
+# 4. Latency
+
+Latency is the time required for data to travel from the sender to the receiver.
+
+It is measured in milliseconds (ms).
+
+Lower latency means faster communication.
+
+Examples:
+
+- Online gaming
+- Video calls
+- Remote desktop
+- Live streaming
+
+---
+
+# Key Takeaways
+
+- A network connects devices to share information.
+- The Internet is a worldwide collection of interconnected networks.
+- SOHO networks are used by small businesses and home offices.
+- IoT devices communicate automatically over the Internet.
+- A bit is the smallest unit of digital information.
+- Data can be transmitted using electrical, optical, or wireless signals.
+- Bandwidth is the maximum capacity of a network.
+- Throughput is the actual data transfer speed.
+- Latency measures the delay during communication.
+
+---
