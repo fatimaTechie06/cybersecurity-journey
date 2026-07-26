@@ -1,0 +1,303 @@
+# Day 2 - Clients, Servers, Network Components & ISP Connectivity
+
+## Introduction
+
+Today I learned how devices communicate in a network using the client-server model, the different components that make up a network, and how Internet Service Providers (ISPs) connect our home networks to the Internet.
+
+---
+
+# 1. Clients and Servers
+
+## What is a Host?
+
+A **host** is any device connected to a network that can send and receive data.
+
+Examples of hosts:
+- Desktop computer
+- Laptop
+- Smartphone
+- Server
+- Tablet
+
+A host can function as:
+- Client
+- Server
+- Both
+
+The installed software determines the role of the device.
+
+---
+
+## What is a Client?
+
+A **client** is a device or application that requests services or resources from another computer.
+
+Examples:
+- Web browser requesting a webpage
+- Email application retrieving emails
+- Mobile app requesting data from a server
+
+Examples of client devices:
+- Laptop
+- Smartphone
+- Desktop computer
+
+---
+
+## What is a Server?
+
+A **server** is a computer that provides services, files, applications, or resources to clients over a network.
+
+Examples:
+- Web server
+- File server
+- Database server
+- Mail server
+
+Servers are designed to handle multiple requests from different clients simultaneously.
+
+---
+
+## Client-Server Network
+
+In a client-server network:
+
+- Clients request resources.
+- Servers provide resources.
+- Centralized management improves security and reliability.
+
+### Advantages
+
+- Better security
+- Centralized administration
+- Easy backup
+- Scalable
+- High performance
+
+### Disadvantages
+
+- More expensive
+- Requires dedicated hardware
+- Needs system administration
+
+---
+
+## Peer-to-Peer (P2P) Network
+
+In a **Peer-to-Peer (P2P)** network, every computer can act as both a client and a server.
+
+Examples:
+- Home networks
+- Small offices
+- File sharing
+
+### Advantages
+
+- Easy to set up
+- Low cost
+- No dedicated server required
+- Suitable for small networks
+
+### Disadvantages
+
+- Less secure
+- No centralized management
+- Poor scalability
+- Slower with many users
+
+---
+
+## Client-Server vs Peer-to-Peer
+
+| Client-Server | Peer-to-Peer |
+|--------------|--------------|
+| Dedicated server | No dedicated server |
+| Centralized management | No centralized management |
+| Higher security | Lower security |
+| Better scalability | Limited scalability |
+| Suitable for businesses | Suitable for homes and small offices |
+
+---
+
+# 2. Network Components
+
+A network consists of three main categories of components:
+
+- End Devices
+- Intermediate Devices
+- Network Media
+
+Together, they allow devices to communicate efficiently.
+
+---
+
+## End Devices (Hosts)
+
+End devices are the devices used by users to send and receive data.
+
+Examples:
+
+- Computers
+- Laptops
+- File servers
+- Web servers
+- Network printers
+- Smartphones
+- Tablets
+- IP phones
+- Security cameras
+- Barcode scanners
+
+End devices act as the source or destination of data.
+
+---
+
+## Intermediate Devices
+
+Intermediate devices connect end devices and control the flow of network traffic.
+
+Examples:
+
+- Routers
+- Switches
+- Wireless Access Points (WAP)
+- Firewalls
+
+Functions:
+
+- Forward data
+- Connect different networks
+- Improve communication
+- Provide security
+- Reduce network congestion
+
+---
+
+## Network Media
+
+Network media is the communication channel through which data travels.
+
+### Wired Media
+
+- Ethernet cable
+- Copper cable
+- Fiber-optic cable
+
+### Wireless Media
+
+- Wi-Fi
+- Radio waves
+- Bluetooth
+- Microwave communication
+
+---
+
+# 3. ISP (Internet Service Provider)
+
+An **Internet Service Provider (ISP)** connects users to the Internet.
+
+Without an ISP, a home or business network cannot access the Internet.
+
+Examples of services provided by an ISP:
+
+- Internet connection
+- IP address assignment
+- Network routing
+- DNS services
+
+---
+
+## How ISP Connectivity Works
+
+1. Your device connects to the home router.
+2. The router sends traffic to the ISP.
+3. The ISP routes traffic through its network.
+4. Multiple ISPs connect together, forming the global Internet.
+
+---
+
+## Common ISP Connection Types
+
+### Cable
+
+Uses cable TV infrastructure.
+
+Advantages:
+- High speed
+- Widely available
+
+---
+
+### DSL (Digital Subscriber Line)
+
+Uses telephone lines.
+
+Advantages:
+- Affordable
+- Reliable
+
+Disadvantages:
+- Lower speed than fiber
+
+---
+
+### Fiber Optic
+
+Uses light through fiber cables.
+
+Advantages:
+- Extremely fast
+- Low latency
+- Reliable
+
+---
+
+### Cellular Network
+
+Provides Internet using mobile networks such as 4G and 5G.
+
+Commonly used on smartphones and mobile hotspots.
+
+---
+
+### Satellite Internet
+
+Used in remote locations where cable or fiber is unavailable.
+
+---
+
+### Dial-up
+
+Uses traditional telephone lines.
+
+Very slow and rarely used today.
+
+---
+
+# Key Takeaways
+
+- A host is any device connected to a network.
+- Clients request services, while servers provide services.
+- Peer-to-Peer networks are suitable for small environments but offer less security.
+- Networks consist of end devices, intermediate devices, and network media.
+- Routers, switches, and access points are important intermediate devices.
+- ISPs connect users to the Internet and provide IP addressing and routing services.
+- Common Internet connection methods include cable, DSL, fiber, cellular, satellite, and dial-up.
+
+---
+
+# Important Terms
+
+| Term | Meaning |
+|------|---------|
+| Host | Any device connected to a network |
+| Client | Requests services from a server |
+| Server | Provides services to clients |
+| P2P | Peer-to-Peer network where devices share resources directly |
+| Router | Connects different networks |
+| Switch | Connects devices within the same network |
+| Wireless Access Point | Provides Wi-Fi connectivity |
+| ISP | Internet Service Provider |
+| Network Media | The medium through which data travels |
+
+---
