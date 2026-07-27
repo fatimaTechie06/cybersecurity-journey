@@ -1,0 +1,224 @@
+# Day 3 - Wireless Networks & Mobile Device Connectivity
+
+## Introduction
+
+Today I learned about wireless communication technologies, different types of wireless networks, and how mobile devices securely connect to Wi-Fi, Bluetooth, and cellular networks.
+
+---
+
+# 1. Wireless Networks
+
+Wireless networks allow devices to communicate without physical cables by using radio waves or other wireless technologies.
+
+Common wireless technologies include:
+
+- Cellular Networks
+- Wi-Fi
+- Bluetooth
+- NFC (Near Field Communication)
+
+---
+
+# Cellular Networks
+
+Cellular networks allow mobile phones to communicate using radio waves.
+
+When a phone call or data request is made:
+
+1. The phone connects to the nearest cell tower.
+2. The tower forwards the signal through the mobile network.
+3. The data reaches its destination.
+
+Common generations of mobile networks include:
+
+- 3G
+- 4G
+- 4G LTE
+- 5G
+
+Each generation provides higher speed, lower latency, and better performance than the previous one.
+
+---
+
+# GSM
+
+**GSM (Global System for Mobile Communications)** is one of the most widely used standards for cellular communication.
+
+It supports:
+
+- Voice calls
+- SMS (Text Messages)
+- Mobile data
+
+---
+
+# Wi-Fi
+
+Wi-Fi allows devices to connect to a local wireless network and access the Internet.
+
+Features:
+
+- Uses radio waves
+- Connects devices through a wireless router or access point
+- Commonly used in homes, schools, offices, and public hotspots
+
+Advantages:
+
+- No cables required
+- High-speed Internet
+- Supports multiple devices
+
+---
+
+# Hotspot
+
+A hotspot is an area where Wi-Fi Internet access is available.
+
+Examples:
+
+- Coffee shops
+- Airports
+- Colleges
+- Libraries
+- Mobile Hotspot from a smartphone
+
+---
+
+# Bluetooth
+
+Bluetooth is a short-range wireless communication technology used for connecting nearby devices.
+
+Examples:
+
+- Wireless headphones
+- Keyboard
+- Mouse
+- Smartwatch
+- Speakers
+- Car audio systems
+
+Advantages:
+
+- Low power consumption
+- Easy device pairing
+- No Internet required
+
+---
+
+# NFC (Near Field Communication)
+
+NFC is a wireless communication technology that works over very short distances (typically less than 4 cm).
+
+Common uses:
+
+- Contactless payments
+- Metro cards
+- Access cards
+- Quick device pairing
+- Data sharing
+
+---
+
+# 2. Mobile Device Connectivity
+
+Modern smartphones automatically choose the best available network.
+
+Connection priority is generally:
+
+1. Wi-Fi
+2. Cellular Data (4G/5G)
+
+If Wi-Fi is unavailable, the device switches to mobile data.
+
+---
+
+# Securing Wi-Fi Connections
+
+To protect personal information while using Wi-Fi:
+
+- Never send usernames or passwords over unencrypted connections.
+- Use a VPN when handling sensitive information.
+- Enable strong security on your home Wi-Fi.
+- Use WPA2 or WPA3 encryption.
+
+---
+
+# Mobile Operating Systems
+
+The two most common mobile operating systems are:
+
+- Android
+- Apple iOS
+
+Both support:
+
+- Wi-Fi
+- Bluetooth
+- Cellular networks
+- NFC
+
+---
+
+# Bluetooth Pairing
+
+Bluetooth pairing is the process of establishing a trusted connection between two Bluetooth devices.
+
+Steps:
+
+1. Turn on Bluetooth.
+2. Make one device discoverable.
+3. Search for nearby devices.
+4. Select the target device.
+5. Confirm the pairing code or PIN (if requested).
+6. Devices are now connected.
+
+---
+
+# Information Shared During Bluetooth Discovery
+
+When a device is discoverable, it may share:
+
+- Device name
+- Bluetooth class
+- Available services
+- Supported Bluetooth version and features
+
+---
+
+# Bluetooth Security
+
+To improve Bluetooth security:
+
+- Turn Bluetooth off when not in use.
+- Keep devices non-discoverable unless pairing.
+- Pair only with trusted devices.
+- Remove unused paired devices.
+- Verify the PIN before pairing.
+
+---
+
+# Key Takeaways
+
+- Wireless networks transmit data without physical cables.
+- Cellular networks use towers to provide voice and Internet services.
+- Wi-Fi connects devices to local networks and the Internet.
+- Bluetooth enables short-range communication between devices.
+- NFC works over very short distances and is commonly used for contactless payments.
+- WPA2 and WPA3 provide stronger Wi-Fi security.
+- Bluetooth pairing creates a secure connection between two devices.
+
+---
+
+# Important Terms
+
+| Term | Meaning |
+|------|---------|
+| GSM | Global System for Mobile Communications |
+| Wi-Fi | Wireless Local Area Network technology |
+| Hotspot | Area where Wi-Fi Internet is available |
+| Bluetooth | Short-range wireless communication technology |
+| NFC | Near Field Communication |
+| WPA2 | Wi-Fi Protected Access 2 security protocol |
+| WPA3 | Latest Wi-Fi security standard |
+
+---
