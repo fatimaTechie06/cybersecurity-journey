@@ -1,0 +1,327 @@
+# Day 4 - Home Networking Basics & Wireless LAN Configuration
+
+## Introduction
+
+Today I learned how a home network is organized, the technologies used for wired and wireless communication, Wi-Fi standards, and the basic configuration of a home wireless router.
+
+---
+
+# 1. Home Network Basics
+
+A home network allows multiple devices to communicate with each other and access the Internet.
+
+A typical home network consists of:
+
+- Internet Service Provider (ISP)
+- Modem (if separate)
+- Wireless Router
+- Wired Devices
+- Wireless Devices
+
+Example devices connected to a home network:
+
+- Desktop computers
+- Laptops
+- Smartphones
+- Smart TVs
+- Gaming consoles
+- Printers
+- Security cameras
+- Smart home devices
+
+---
+
+## Advantages of a Wireless Home Network
+
+Wireless LAN (WLAN) offers several benefits:
+
+- Mobility
+- Easy installation
+- Scalability
+- Flexibility
+- Lower installation cost
+- Reliable communication
+
+---
+
+## Router Ports
+
+Most home routers contain two main types of ports.
+
+### Internet (WAN) Port
+
+- Connects the router to the ISP.
+- Receives Internet connectivity.
+
+### LAN Ports
+
+- Connect local wired devices.
+- Used for computers, printers, and switches.
+
+Most wireless routers also include:
+
+- Wireless antennas
+- Built-in Wireless Access Point (AP)
+
+---
+
+# 2. Network Technologies in the Home
+
+Home networks use both wired and wireless technologies.
+
+## Wired Network
+
+Uses Ethernet cables.
+
+Advantages:
+
+- Faster
+- Stable connection
+- Lower latency
+- Less interference
+
+Common cable:
+
+- Cat5e
+- Cat6
+- Cat6a
+
+Ethernet cables contain four twisted wire pairs that reduce electrical interference.
+
+---
+
+## Wireless Network
+
+Wireless communication uses electromagnetic radio waves.
+
+Common frequency bands:
+
+- 2.4 GHz
+- 5 GHz
+
+### 2.4 GHz
+
+Advantages:
+
+- Longer range
+- Better wall penetration
+
+Disadvantages:
+
+- Slower
+- More interference
+
+---
+
+### 5 GHz
+
+Advantages:
+
+- Higher speed
+- Less interference
+
+Disadvantages:
+
+- Shorter range
+
+---
+
+## Bluetooth vs Wi-Fi
+
+| Wi-Fi | Bluetooth |
+|--------|-----------|
+| Longer range | Short range |
+| Higher speed | Lower speed |
+| Internet access | Device-to-device communication |
+| Uses 2.4 GHz and 5 GHz | Mainly uses 2.4 GHz |
+
+---
+
+# 3. IEEE 802.11 Wireless Standards
+
+Wi-Fi networks follow the IEEE 802.11 standard.
+
+Different versions include:
+
+- 802.11b
+- 802.11g
+- 802.11n
+- 802.11ac
+- 802.11ax (Wi-Fi 6)
+
+Newer standards provide:
+
+- Faster speeds
+- Better efficiency
+- Improved range
+- Support for more connected devices
+
+---
+
+# 4. Important Wireless Router Settings
+
+## Network Mode
+
+Determines which Wi-Fi standards the router supports.
+
+Examples:
+
+- 802.11b
+- 802.11g
+- 802.11n
+- Mixed Mode
+
+Mixed Mode allows devices using different standards to connect.
+
+---
+
+## SSID (Service Set Identifier)
+
+The SSID is the name of the wireless network.
+
+Examples:
+
+- HomeWiFi
+- OfficeNetwork
+- MyRouter
+
+All devices must use the correct SSID to connect.
+
+---
+
+## Channel
+
+A Wi-Fi channel determines the frequency used for communication.
+
+Changing channels can reduce interference from nearby wireless networks.
+
+Most routers automatically choose the best channel.
+
+---
+
+## SSID Broadcast
+
+SSID Broadcast controls whether the Wi-Fi name is visible.
+
+Enabled:
+
+- Devices can easily find the network.
+
+Disabled:
+
+- Users must manually enter the SSID.
+
+Note: Hiding the SSID does **not** provide strong security by itself.
+
+---
+
+# 5. Setting Up a Home Router
+
+Basic setup process:
+
+1. Connect the router to the ISP.
+2. Connect a computer using an Ethernet cable.
+3. Open the router's configuration page.
+4. Configure the Wi-Fi name (SSID).
+5. Set a strong password.
+6. Enable WPA2 or WPA3 security.
+7. Save the settings.
+8. Connect wireless devices.
+
+---
+
+## DHCP
+
+Most home routers include a DHCP server.
+
+DHCP automatically assigns:
+
+- IP Address
+- Subnet Mask
+- Default Gateway
+- DNS Server
+
+Without DHCP, devices would need manual network configuration.
+
+---
+
+## Guest Network
+
+Many routers allow the creation of a Guest Network.
+
+Benefits:
+
+- Visitors get Internet access.
+- Guest devices cannot access personal devices.
+- Improves network security.
+
+---
+
+## MAC Address Filtering
+
+MAC Address Filtering allows only approved devices to connect.
+
+Advantages:
+
+- Extra layer of security
+
+Disadvantages:
+
+- Time-consuming to manage
+- MAC addresses can be spoofed
+
+---
+
+# Home Network Diagram
+
+```
+                 Internet
+                     │
+                  ISP Network
+                     │
+               WAN (Internet Port)
+                     │
+               ┌──────────────┐
+               │    Router    │
+               └──────────────┘
+               │            │
+        Ethernet LAN     Wi-Fi
+         │      │        │    │
+       PC    Printer   Phone Laptop
+```
+
+---
+
+# Key Takeaways
+
+- Home networks connect multiple wired and wireless devices.
+- Routers connect the home network to the Internet.
+- LAN ports connect local devices, while the WAN port connects to the ISP.
+- Wi-Fi mainly operates on 2.4 GHz and 5 GHz frequency bands.
+- SSID identifies a wireless network.
+- DHCP automatically assigns IP addresses.
+- Guest networks improve security by isolating visitor devices.
+- WPA2 and WPA3 should always be used for Wi-Fi security.
+
+---
+
+# Important Terms
+
+| Term | Meaning |
+|------|---------|
+| LAN | Local Area Network |
+| WAN | Wide Area Network |
+| WLAN | Wireless Local Area Network |
+| SSID | Name of a Wi-Fi network |
+| DHCP | Automatically assigns IP addresses |
+| Access Point (AP) | Device that provides Wi-Fi access |
+| MAC Address | Unique hardware address of a network device |
+| IEEE 802.11 | Standard for Wi-Fi networks |
+
+---
+
+# Practical Activity
+
+- Packet Tracer Home Network Activity *(To be completed next session.)*
+
+---
