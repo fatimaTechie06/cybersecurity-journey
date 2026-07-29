@@ -1,0 +1,310 @@
+# Day 5 - Communication Protocols, Communication Models & Network Media
+
+## Introduction
+
+Today I learned how network protocols enable communication between devices, the TCP/IP and OSI reference models, and the different types of network media used to transmit data.
+
+---
+
+# 1. Communication Protocols
+
+A **network protocol** is a set of rules that allows devices to communicate correctly.
+
+Protocols define:
+
+- How data is formatted
+- How data is transmitted
+- How devices communicate
+- How errors are handled
+
+Without protocols, devices from different manufacturers would not be able to communicate.
+
+---
+
+## Elements of a Communication Protocol
+
+### Message Format
+
+Defines how information is organized before transmission.
+
+---
+
+### Message Size
+
+Determines how much data can be sent in one transmission.
+
+Large messages are divided into smaller pieces called packets.
+
+---
+
+### Timing
+
+Controls:
+
+- Transmission speed
+- Response time
+- Data flow
+
+Proper timing prevents network congestion.
+
+---
+
+### Encoding
+
+Before transmission, data is converted into:
+
+- Electrical signals
+- Light pulses
+- Radio waves
+
+depending on the transmission medium.
+
+---
+
+### Encapsulation
+
+Encapsulation is the process of adding protocol information (headers) to data before sending it across the network.
+
+This information includes:
+
+- Source address
+- Destination address
+- Error-checking information
+
+---
+
+### Message Pattern
+
+Communication may occur using different patterns such as:
+
+- Request and Response
+- Streaming
+- One-way transmission
+
+---
+
+# 2. Communication Standards
+
+Communication standards ensure that all networking devices follow the same rules.
+
+Benefits:
+
+- Device compatibility
+- Reliable communication
+- Easier troubleshooting
+- Global interoperability
+
+Examples of organizations that develop networking standards:
+
+- IEEE
+- IETF
+- ISO
+
+---
+
+# 3. Network Communication Models
+
+A communication model divides networking tasks into separate layers.
+
+Benefits:
+
+- Easier troubleshooting
+- Standardization
+- Interoperability
+- Modular network design
+
+The two most common models are:
+
+- TCP/IP Model
+- OSI Model
+
+---
+
+# TCP/IP Model
+
+The TCP/IP model contains four layers.
+
+## 1. Application Layer
+
+Provides network services to applications.
+
+Examples:
+
+- HTTP
+- HTTPS
+- FTP
+- DNS
+- SMTP
+
+---
+
+## 2. Transport Layer
+
+Responsible for:
+
+- End-to-end communication
+- Segmentation
+- Reliability
+- Error recovery
+
+Protocols:
+
+- TCP
+- UDP
+
+---
+
+## 3. Internet Layer
+
+Handles logical addressing and routing.
+
+Protocol:
+
+- IP
+
+---
+
+## 4. Network Access Layer
+
+Handles communication with the physical network.
+
+Examples:
+
+- Ethernet
+- Wi-Fi
+
+---
+
+# OSI Model
+
+The OSI model consists of seven layers.
+
+| Layer | Name | Function |
+|------:|------|----------|
+| 7 | Application | Provides services to user applications |
+| 6 | Presentation | Data formatting, encryption, compression |
+| 5 | Session | Manages communication sessions |
+| 4 | Transport | Reliable data transfer |
+| 3 | Network | Routing and logical addressing |
+| 2 | Data Link | Frame transmission and MAC addressing |
+| 1 | Physical | Transmission of bits over media |
+
+---
+
+## OSI Layer Mnemonic
+
+From Layer 7 to Layer 1:
+
+**All People Seem To Need Data Processing**
+
+From Layer 1 to Layer 7:
+
+**Please Do Not Throw Sausage Pizza Away**
+
+---
+
+# 4. Network Media
+
+Network media is the path through which data travels.
+
+Three primary media types are used.
+
+---
+
+## Copper Cable
+
+Data travels as electrical signals.
+
+Examples:
+
+- Ethernet cable
+- Twisted Pair cable
+
+Advantages:
+
+- Low cost
+- Easy installation
+
+Disadvantages:
+
+- Limited distance
+- Electrical interference
+
+---
+
+## Fiber Optic Cable
+
+Data travels as pulses of light.
+
+Advantages:
+
+- Extremely high speed
+- Long-distance communication
+- Immune to electromagnetic interference
+
+Disadvantages:
+
+- More expensive
+- Difficult installation
+
+---
+
+## Wireless Media
+
+Uses radio waves or electromagnetic waves.
+
+Examples:
+
+- Wi-Fi
+- Bluetooth
+- Cellular networks
+
+Advantages:
+
+- Mobility
+- Easy deployment
+
+Disadvantages:
+
+- Signal interference
+- Lower security than wired networks
+
+---
+
+# Choosing Network Media
+
+Factors to consider include:
+
+- Distance
+- Environment
+- Required speed
+- Cost
+
+---
+
+# Key Takeaways
+
+- Protocols define how devices communicate.
+- Encapsulation adds protocol information to transmitted data.
+- Standards ensure interoperability between devices.
+- TCP/IP is the practical networking model used on the Internet.
+- The OSI model helps understand networking concepts.
+- Networks use copper, fiber optic, and wireless media.
+- Different media types have different advantages depending on speed, distance, and cost.
+
+---
+
+# Important Terms
+
+| Term | Meaning |
+|------|---------|
+| Protocol | Rules for communication |
+| Encapsulation | Adding protocol headers to data |
+| TCP/IP | Internet communication model |
+| OSI Model | Seven-layer networking reference model |
+| Ethernet | Wired LAN technology |
+| Fiber Optic | Light-based transmission medium |
+| Physical Layer | Transmits raw bits |
+| Network Layer | Performs routing |
+
+---
