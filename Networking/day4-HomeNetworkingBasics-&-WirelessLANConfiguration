@@ -319,3 +319,56 @@ Disadvantages:
 | IEEE 802.11 | Standard for Wi-Fi networks |
 
 ---
+
+# Practical - Cisco Packet Tracer
+
+## Activity
+Configure a Wireless Router and Client
+
+## Tasks Performed
+
+- Installed Cisco Packet Tracer on Ubuntu.
+- Configured the Home Wireless Router.
+- Connected the router to the Cable Modem.
+- Enabled DHCP on the router.
+- Configured the Wireless Network (SSID).
+- Configured WPA2-Personal wireless security.
+- Connected wired PCs to the router.
+- Connected the laptop wirelessly.
+- Verified that the laptop received an IP address automatically through DHCP.
+- Tested network connectivity.
+
+---
+
+## Activity Result
+
+**Score:** 19/19 (100%)
+
+✔ Activity completed successfully.
+
+---
+
+## What I Learned
+
+- Basic home network configuration.
+- How DHCP automatically assigns IP addresses.
+- Configuring SSID and WPA2 security.
+- Connecting wired and wireless devices.
+- Understanding the relationship between a modem, router, and end devices.
+- Gained hands-on experience using Cisco Packet Tracer on Ubuntu.
+
+---
+
+## Screenshots
+
+![User Management](day4-wireless_connection.png)
+
+![User Management](packet_tracer_topology.png)
+
+![User Management](day4-activity_completed.png)
+
+- Packet Tracer topology
+- Wireless client connected successfully
+- Activity completed
+
+---
