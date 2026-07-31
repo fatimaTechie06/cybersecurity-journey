@@ -1,0 +1,96 @@
+# Day 7 - Encapsulation, Ethernet Frames & Access Layer
+
+
+## Objective
+
+Learn how data is encapsulated for transmission across a network, understand Ethernet frames, and learn how the access layer and Ethernet switches operate.
+
+---
+
+# Topics Learned
+
+## 1. Encapsulation and the Ethernet Frame
+
+### Encapsulation
+
+**Encapsulation** is the process of placing one message format inside another message format as data moves through the networking layers.
+
+When the receiving device processes the data, the process is reversed. This is called **de-encapsulation**.
+
+### Ethernet Frame
+
+The Ethernet protocol defines how data is transmitted over an Ethernet network.
+
+An Ethernet frame contains information such as:
+
+- Source MAC address
+- Destination MAC address
+- Frame type/length
+- Data
+- Frame Check Sequence (FCS)
+- Preamble and Start Frame Delimiter
+
+The frame format allows devices to identify the source and destination and detect transmission errors.
+
+---
+
+# 2. The Access Layer
+
+The **access layer** is the part of a network where end devices connect to the network.
+
+Devices can connect to an Ethernet network using Ethernet cables and access-layer devices such as switches.
+
+### Ethernet Hub
+
+An Ethernet hub has multiple ports for connecting hosts.
+
+- Sends traffic to connected devices.
+- Can only handle one message at a time.
+- Multiple simultaneous transmissions can cause collisions.
+- Collisions result in retransmissions and slower network performance.
+- Hubs are mostly obsolete and have been replaced by switches.
+
+### Ethernet Switch
+
+An Ethernet switch operates at **Layer 2 (Data Link Layer)**.
+
+A switch:
+
+- Receives Ethernet frames.
+- Examines the destination MAC address.
+- Uses a **MAC address table** to determine where to forward the frame.
+- Allows multiple devices to communicate simultaneously.
+- Reduces collisions compared with hubs.
+
+---
+
+# 3. MAC Address Table
+
+A switch maintains a **MAC address table** that maps:
+
+**MAC Address → Switch Port**
+
+The switch learns MAC addresses by examining the **source MAC address** of incoming frames.
+
+When a new device sends a frame, the switch learns:
+
+- The device's MAC address.
+- The port through which the frame arrived.
+
+The MAC address table is dynamically updated as devices communicate with the network.
+
+---
+
+
+# What I Learned
+
+- What encapsulation and de-encapsulation mean.
+- How Ethernet frames are structured.
+- The purpose of source and destination MAC addresses.
+- How Ethernet switches operate at Layer 2.
+- How switches learn MAC addresses.
+- What a MAC address table is.
+- Difference between an Ethernet hub and a switch.
+- Why switches are more efficient than hubs.
+
+---
