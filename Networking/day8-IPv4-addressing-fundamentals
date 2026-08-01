@@ -1,0 +1,41 @@
+# Day 8 – IPv4 Address Fundamentals
+
+## Topics Covered
+- Purpose of IPv4 Address
+- IPv4 Address Structure
+
+## Key Concepts Learned
+
+### Purpose of IPv4 Address
+- An IPv4 address is a logical address used to uniquely identify a device on a network.
+- Every device connected to a network must have a unique IP address.
+- IP addresses allow devices to send and receive data over both local networks (LAN) and the Internet.
+- Every packet contains:
+  - Source IP Address
+  - Destination IP Address
+- IP addresses are assigned to a device's Network Interface Card (NIC).
+
+### IPv4 Address Structure
+- IPv4 is a **32-bit logical address**.
+- It consists of two parts:
+  - **Network Portion** – Identifies the network.
+  - **Host Portion** – Identifies the specific device within that network.
+- Example:
+  - IP Address: **192.168.5.11**
+  - Subnet Mask: **255.255.255.0**
+  - Network Portion: **192.168.5**
+  - Host Portion: **11**
+- Routers forward packets based on the **network portion** of the IP address.
+
+## Important Terms
+- IPv4
+- Logical Address
+- Network Portion
+- Host Portion
+- Network Interface Card (NIC)
+- Subnet Mask
+- Source IP Address
+- Destination IP Address
+
+## Summary
+Today I learned the basics of IPv4 addressing, including why IP addresses are necessary for communication, how they uniquely identify devices, and how an IPv4 address is divided into network and host portions for routing and communication.
