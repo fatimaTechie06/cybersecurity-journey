@@ -3,6 +3,7 @@
 ## Topics Covered
 - Purpose of IPv4 Address
 - IPv4 Address Structure
+- Packet Tracer Activity – Connect to a Web Server
 
 ## Key Concepts Learned
 
@@ -27,6 +28,26 @@
   - Host Portion: **11**
 - Routers forward packets based on the **network portion** of the IP address.
 
+## Packet Tracer Activity – Connect to a Web Server
+
+### Objective
+Verify network connectivity by accessing a remote web server using both the `ping` command and a web browser.
+
+### Steps Performed
+1. Opened the PC command prompt.
+2. Executed:
+   ```bash
+   ping 172.33.100.50
+   ```
+3. Observed that the first packet timed out while the remaining packets received replies successfully.
+4. Opened the Web Browser on the PC.
+5. Entered:
+   ```
+   http://172.33.100.50
+   ```
+6. Successfully accessed the Learn IP web page.
+7. Verified the activity completion in Packet Tracer.
+
 ## Important Terms
 - IPv4
 - Logical Address
@@ -36,6 +57,9 @@
 - Subnet Mask
 - Source IP Address
 - Destination IP Address
+- Ping
+- HTTP
+- Web Server
 
 ## Summary
-Today I learned the basics of IPv4 addressing, including why IP addresses are necessary for communication, how they uniquely identify devices, and how an IPv4 address is divided into network and host portions for routing and communication.
+Today I learned the purpose and structure of IPv4 addresses and how they uniquely identify devices on a network. I also completed a Packet Tracer activity where I verified connectivity to a web server using the `ping` command and successfully accessed the web server through a browser using its IP address.
