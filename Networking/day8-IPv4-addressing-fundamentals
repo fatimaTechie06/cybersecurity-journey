@@ -48,6 +48,10 @@ Verify network connectivity by accessing a remote web server using both the `pin
 6. Successfully accessed the Learn IP web page.
 7. Verified the activity completion in Packet Tracer.
 
+![User Management](images/day8_packet_tracer_topology.png)
+![User Management](images/day8_ping_command.png)
+![User Management](images/day8_website.png)
+
 ## Important Terms
 - IPv4
 - Logical Address
