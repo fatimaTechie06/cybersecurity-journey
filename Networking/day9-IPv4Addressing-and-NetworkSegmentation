@@ -1,0 +1,86 @@
+# Day 9 - IPv4 Addressing and Network Segmentation
+
+## Topics Covered
+
+- IPv4 Unicast, Broadcast, and Multicast
+- Types of IPv4 Addresses
+- Public vs Private IP Addresses
+- Loopback and APIPA Addresses
+- Classful IPv4 Addressing (Class A, B, C, D, E)
+- Network Segmentation and Subnetting Basics
+
+---
+
+## What I Learned
+
+### IPv4 Unicast, Broadcast, and Multicast
+
+- **Unicast** is one-to-one communication between two devices.
+- **Broadcast** is one-to-all communication within the same network.
+- **Multicast** allows one device to send data to a selected group of devices, reducing unnecessary network traffic.
+
+---
+
+### Types of IPv4 Addresses
+
+#### Public IP Address
+- Globally unique.
+- Routable over the Internet.
+- Assigned by Internet Service Providers (ISPs).
+
+#### Private IP Address
+- Used inside local networks.
+- Cannot be accessed directly from the Internet.
+- Requires Network Address Translation (NAT) to communicate externally.
+
+#### Loopback Address
+- Range: `127.0.0.0/8`
+- Common address: `127.0.0.1`
+- Used to test the local network stack.
+
+#### APIPA Address
+- Range: `169.254.0.0/16`
+- Automatically assigned when a DHCP server is unavailable.
+
+---
+
+### IPv4 Address Classes
+
+| Class | Range | Typical Use |
+|--------|-------|-------------|
+| A | 0.0.0.0 - 127.255.255.255 | Very large networks |
+| B | 128.0.0.0 - 191.255.255.255 | Medium to large networks |
+| C | 192.0.0.0 - 223.255.255.255 | Small networks |
+| D | 224.0.0.0 - 239.255.255.255 | Multicast |
+| E | 240.0.0.0 - 255.255.255.255 | Experimental |
+
+---
+
+### Network Segmentation
+
+I learned that:
+
+- Large networks generate excessive broadcast traffic.
+- Network segmentation divides a large network into smaller subnets.
+- Subnetting improves:
+  - Performance
+  - Security
+  - Traffic management
+  - Broadcast control
+
+I also learned that:
+- ARP is used to discover MAC addresses.
+- DHCP assigns IP addresses automatically.
+- Switches forward broadcasts within the broadcast domain.
+
+---
+
+## Key Takeaways
+
+- Every device requires a unique IP address.
+- Public and private IP addresses serve different purposes.
+- Loopback and APIPA addresses have special networking roles.
+- Understanding unicast, broadcast, and multicast is essential for network communication.
+- Network segmentation improves efficiency and security by reducing unnecessary broadcasts.
+
+---
