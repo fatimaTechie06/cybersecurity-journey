@@ -1,0 +1,98 @@
+# Day 10 - Introduction to IPv6
+
+## Topics Covered
+
+- IPv4 Issues
+- Introduction to IPv6
+- IPv6 Addressing
+- IPv6 Address Compression Rules
+- IPv4 to IPv6 Transition Techniques
+
+---
+
+## What I Learned
+
+### IPv4 Issues
+
+I learned that IPv4 has a limited 32-bit address space, which has resulted in the exhaustion of available IP addresses due to the rapid growth of internet-connected devices.
+
+IPv6 was introduced to overcome these limitations by providing a much larger address space and several networking improvements.
+
+---
+
+### IPv6 Addressing
+
+- IPv6 uses **128-bit addresses**, allowing an extremely large number of unique addresses.
+- IPv6 addresses are written in **hexadecimal**.
+- Each hexadecimal digit represents **4 bits**.
+- An IPv6 address consists of **8 groups (hextets)** separated by colons (`:`).
+- IPv6 addresses are **not case-sensitive**.
+
+Example:
+
+```
+fe80:0000:0000:0000:0123:4567:89ab:cdef
+```
+
+---
+
+### IPv6 Address Compression Rules
+
+#### Rule 1: Omit Leading Zeros
+
+Leading zeros within a hextet can be removed.
+
+Examples:
+
+```
+01ab → 1ab
+09f0 → 9f0
+00ab → ab
+```
+
+---
+
+#### Rule 2: Double Colon (::)
+
+A continuous sequence of one or more all-zero hextets can be replaced with a double colon (`::`).
+
+Example:
+
+```
+2001:db8:cafe:1:0:0:0:1
+```
+
+can be written as
+
+```
+2001:db8:cafe:1::1
+```
+
+**Note:** The double colon (`::`) can only be used **once** in an IPv6 address.
+
+---
+
+### IPv4 to IPv6 Transition Techniques
+
+Since IPv4 and IPv6 currently coexist, different migration methods are used:
+
+- **Dual Stack**
+  - Devices run both IPv4 and IPv6 simultaneously.
+
+- **Tunneling**
+  - IPv6 packets are encapsulated inside IPv4 packets to travel across IPv4 networks.
+
+- **Translation**
+  - IPv4 packets are translated into IPv6 packets (and vice versa), similar to how NAT works for IPv4.
+
+---
+
+## Key Takeaways
+
+- IPv6 solves the IPv4 address exhaustion problem.
+- IPv6 uses 128-bit hexadecimal addresses.
+- Leading zeros can be omitted to shorten IPv6 addresses.
+- A double colon (`::`) can replace one continuous sequence of zero hextets.
+- Dual Stack, Tunneling, and Translation help organizations migrate from IPv4 to IPv6.
+
+---
