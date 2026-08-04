@@ -1,0 +1,191 @@
+# Day 11- Static & dynamic addressing and DHCP
+
+
+Today I learned about **Static and Dynamic IP Addressing** and **DHCP (Dynamic Host Configuration Protocol)**. I also completed a Packet Tracer activity where I configured a DHCP server and verified connectivity between multiple PCs.
+
+---
+
+# Topics Learned
+
+## 1. Static IP Addressing
+
+A **Static IP Address** is manually assigned to a device by the network administrator. It remains the same unless changed manually.
+
+### Advantages
+- Permanent IP address
+- Easier to locate devices
+- Suitable for servers, printers, and routers
+
+### Disadvantages
+- Manual configuration required
+- Time-consuming for large networks
+- Higher chance of configuration errors
+
+### Common Uses
+- Web Servers
+- Database Servers
+- Network Printers
+- Routers
+- CCTV Systems
+
+---
+
+## 2. Dynamic IP Addressing
+
+A **Dynamic IP Address** is assigned automatically by a **DHCP Server** whenever a device joins the network.
+
+Instead of manually configuring:
+- IP Address
+- Subnet Mask
+- Default Gateway
+- DNS Server
+
+the DHCP server assigns them automatically.
+
+### Advantages
+- Automatic configuration
+- Reduces human errors
+- Easy to manage
+- Efficient utilization of IP addresses
+
+### Disadvantages
+- IP addresses may change
+- Not ideal for devices requiring permanent addresses
+
+---
+
+# 3. DHCP (Dynamic Host Configuration Protocol)
+
+DHCP is a protocol used to automatically assign network configuration information to hosts.
+
+A DHCP server provides:
+- IPv4 Address
+- Subnet Mask
+- Default Gateway
+- DNS Server
+
+This eliminates the need for manual IP configuration.
+
+---
+
+# 4. DHCP Process (DORA)
+
+The DHCP communication process consists of four steps:
+
+| Step | Message | Description |
+|------|----------|-------------|
+| D | Discover | Client searches for a DHCP server. |
+| O | Offer | Server offers an available IP address. |
+| R | Request | Client requests the offered IP address. |
+| A | Acknowledge | Server confirms and leases the IP address. |
+
+**Easy way to remember:** **DORA**
+
+- **D** → Discover
+- **O** → Offer
+- **R** → Request
+- **A** → Acknowledge
+
+---
+
+# Packet Tracer Activity
+
+## Objective
+
+Configure a router as a DHCP server and verify that multiple PCs receive IP addresses automatically.
+
+---
+
+## Configuration Results
+
+### Router (DHCP Server)
+
+Configured:
+- Default Gateway
+- Maximum Number of Users
+- Starting IP Address
+- DHCP Pool
+
+---
+
+### PC0
+
+```
+IPv4 Address : 192.168.5.100
+Subnet Mask : 255.255.255.0
+Default Gateway : 192.168.5.1
+```
+
+Obtained automatically using DHCP.
+
+---
+
+### PC1
+
+```
+IPv4 Address : 192.168.5.126
+Subnet Mask : 255.255.255.0
+Default Gateway : 192.168.5.1
+```
+
+DHCP request successful.
+
+---
+
+### PC2
+
+```
+IPv4 Address : 192.168.5.127
+Subnet Mask : 255.255.255.0
+Default Gateway : 192.168.5.1
+```
+
+DHCP request successful.
+
+---
+
+# Connectivity Testing
+
+Using the **ping** command, I verified connectivity between the devices.
+
+Successful tests:
+
+- Ping to Default Gateway (192.168.5.1)
+- Ping from PC2 to PC1
+- Ping from PC2 to PC0
+
+All packets were transmitted successfully with **0% packet loss**, confirming proper network connectivity.
+
+---
+
+# Activity Result
+
+![User Management](images/day11_pc0.png)
+![User Management](images/day11_pc1.png)
+![User Management](images/day11_pc2.1.png)
+![User Management](images/day11_pc2.2.png)
+![User Management](images/day11_pc2.3.png)
+
+---
+
+# Commands Used
+
+```bash
+ipconfig
+ping 192.168.5.1
+ping 192.168.5.126
+ping 192.168.5.127
+```
+
+---
+
+# Key Takeaways
+
+- Learned the difference between **Static** and **Dynamic** IP addressing.
+- Understood why DHCP is preferred in modern networks.
+- Learned the **DORA** process used by DHCP.
+- Configured a DHCP server in Cisco Packet Tracer.
+- Verified automatic IP assignment using `ipconfig`.
+- Tested communication using the `ping` command.
+
+---
