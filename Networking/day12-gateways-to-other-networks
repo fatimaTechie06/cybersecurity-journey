@@ -1,0 +1,105 @@
+# 🌐 Networking Learning Journey - Day 12
+
+
+Today I studied **Network Boundaries** and **Network Address Translation (NAT)**. There was also a Packet Tracer activity in this module, but I decided to complete it tomorrow.
+
+---
+
+# 📖 Topics Learned
+
+## 1. Network Boundaries
+
+A **network boundary** separates a **local (private) network** from an **external network (Internet)**.
+
+Every host on a network must know the **default gateway** to communicate with devices outside its own network.
+
+The default gateway can be configured:
+
+- Manually (Static)
+- Automatically using DHCP
+
+---
+
+### Wireless Router Functions
+
+A wireless router performs two important roles:
+
+### Inside the Local Network
+
+- Acts as a **DHCP Server**
+- Assigns private IP addresses to connected devices
+- Manages communication between local hosts
+
+### Toward the Internet
+
+- Acts as a **DHCP Client**
+- Receives a public IPv4 address from the ISP
+- Connects the home network to the Internet
+
+Thus, the router forms the **boundary between the internal network and the external Internet**.
+
+---
+
+# 2. Network Address Translation (NAT)
+
+**NAT (Network Address Translation)** is the process of converting **private IP addresses** into **public IP addresses** so devices on a private network can communicate over the Internet.
+
+Without NAT, private IPv4 addresses cannot be routed across the public Internet.
+
+---
+
+## Why NAT is Needed
+
+Private IPv4 addresses are **not globally routable**.
+
+When a device sends data to the Internet:
+
+1. The packet reaches the router.
+2. The router replaces the private source IP address with its own public IP address.
+3. The packet is sent to the Internet.
+4. Replies return to the router.
+5. The router translates the destination back to the correct private IP address.
+
+This process allows multiple devices on a local network to share a single public IPv4 address.
+
+---
+
+## Advantages of NAT
+
+- Conserves public IPv4 addresses
+- Improves security by hiding internal IP addresses
+- Allows multiple devices to share one public IP
+- Enables private networks to access the Internet
+
+---
+
+# 📌 Packet Tracer Activity
+
+A Packet Tracer activity was included in today's module.
+
+**Status:** ⏳ Not completed
+
+I plan to complete the activity tomorrow before moving on to the next lesson.
+
+---
+
+# 📝 Key Takeaways
+
+- Understood the concept of **network boundaries**.
+- Learned the importance of the **default gateway**.
+- Understood how a wireless router acts as both a **DHCP Server** and a **DHCP Client**.
+- Learned how **NAT** converts private IP addresses into public IP addresses.
+- Identified IPv4 Network Segmentation and DHCP as topics requiring additional revision.
+
+---
+
+# 🎯 Skills Gained
+
+- Understanding of Network Boundaries
+- Default Gateway Concepts
+- Router Functions
+- DHCP Client vs DHCP Server
+- Network Address Translation (NAT)
+- Checkpoint Assessment and Self-Evaluation
+
+---
