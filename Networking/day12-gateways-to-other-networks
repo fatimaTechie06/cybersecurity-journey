@@ -1,7 +1,7 @@
 # Networking Learning Journey - Day 12
 
 
-Today I studied **Network Boundaries** and **Network Address Translation (NAT)**. There was also a Packet Tracer activity in this module, but I decided to complete it tomorrow.
+Today I studied **Network Boundaries** and **Network Address Translation (NAT)**. There was also a Packet Tracer activity in this module.
 
 ---
 
@@ -77,9 +77,11 @@ This process allows multiple devices on a local network to share a single public
 
 A Packet Tracer activity was included in today's module.
 
-**Status:** Not completed
+Examine NAT on a Wireless Router
 
-I plan to complete the activity tomorrow before moving on to the next lesson.
+![User management](images/day12_activity1.png)
+![User management](images/day12_activity2.png)
+![User management](images/day12_activity3.png)
 
 ---
 
@@ -100,6 +102,5 @@ I plan to complete the activity tomorrow before moving on to the next lesson.
 - Router Functions
 - DHCP Client vs DHCP Server
 - Network Address Translation (NAT)
-- Checkpoint Assessment and Self-Evaluation
 
 ---
