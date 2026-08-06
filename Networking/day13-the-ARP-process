@@ -1,0 +1,389 @@
+# Day 13- The ARP process
+## Topic 1: MAC Address and IP Address
+
+## What is a MAC Address?
+
+A **MAC (Media Access Control) Address** is the **physical address** assigned to a Network Interface Card (NIC). It uniquely identifies a device on a Local Area Network (LAN).
+
+### Characteristics
+- Layer: Data Link Layer (Layer 2)
+- Assigned by the manufacturer
+- 48-bit hexadecimal address
+- Used for communication within the same LAN
+- Example:
+  ```
+  00:1A:2B:3C:4D:5E
+  ```
+
+---
+
+## What is an IP Address?
+
+An **IP (Internet Protocol) Address** is a **logical address** assigned to a device to identify it on a network.
+
+### Characteristics
+- Layer: Network Layer (Layer 3)
+- Can be assigned manually or by DHCP
+- Used to communicate across local and remote networks
+- IPv4 Example:
+  ```
+  192.168.100.5
+  ```
+- IPv6 Example:
+  ```
+  2001:db8::1
+  ```
+
+---
+
+## MAC Address vs IP Address
+
+| MAC Address | IP Address |
+|-------------|------------|
+| Physical Address | Logical Address |
+| Layer 2 | Layer 3 |
+| Permanent (usually) | Can change |
+| Used inside a LAN | Used between networks |
+| Identifies the network card | Identifies the device on a network |
+
+---
+
+## Why Both MAC and IP Addresses Are Needed
+
+Suppose Laptop A wants to send data to Laptop B.
+
+- The **IP address** identifies where the destination device is.
+- The **MAC address** identifies the destination device's network interface on the local network.
+
+Both addresses work together to deliver data successfully.
+
+---
+
+## Communication on the Same Network
+
+When the destination device is on the same LAN:
+
+1. The sender checks whether it already knows the destination MAC address.
+2. If not, it uses **ARP (Address Resolution Protocol)**.
+3. After obtaining the MAC address, the Ethernet frame is sent directly to the destination.
+
+Example:
+
+```
+Laptop
+IP: 192.168.100.7
+
+        ↓
+
+Phone
+IP: 192.168.100.5
+```
+
+The laptop first discovers the phone's MAC address and then sends the frame.
+
+---
+
+## Communication on a Different Network
+
+If the destination IP belongs to another network:
+
+- The sender does **not** use the destination device's MAC address.
+- Instead, it sends the frame to the **default gateway (router)**.
+- The router forwards the packet toward the destination network.
+
+Example:
+
+```
+Laptop
+192.168.100.7
+      |
+      |
+Router (Default Gateway)
+192.168.100.1
+      |
+      |
+Internet
+      |
+Google Server
+8.8.8.8
+```
+
+Here, the laptop uses the **router's MAC address**, not Google's MAC address.
+
+---
+
+## Encapsulation Across Networks
+
+When data travels through multiple routers:
+
+- The **IP Address remains the same** from source to destination.
+- The **MAC Address changes at every hop** because each router creates a new Ethernet frame for the next network.
+
+Example:
+
+```
+PC → Router → Router → Server
+
+IP Address:
+Same throughout the journey
+
+MAC Address:
+Changes at every network segment
+```
+
+---
+
+## Key Points
+
+- MAC Address = Physical Address
+- IP Address = Logical Address
+- MAC addresses are used for communication inside a LAN.
+- IP addresses identify devices across networks.
+- Routers use IP addresses to determine the best path.
+- Ethernet frames use MAC addresses for delivery on each local network.
+
+---
+
+# Topic 2: Broadcast Containment and ARP
+
+## What is a Broadcast?
+
+A **broadcast** is a message sent to **every device** on the local network.
+
+Instead of sending the frame to one device, it is delivered to all devices connected to the same broadcast domain.
+
+---
+
+## Broadcast MAC Address
+
+The broadcast MAC address is:
+
+```
+FF:FF:FF:FF:FF:FF
+```
+
+Every hexadecimal **F** represents four binary 1s.
+
+This address tells every device on the LAN to receive the frame.
+
+---
+
+## Broadcast Domain
+
+A **broadcast domain** is a group of devices that receive the same broadcast message.
+
+Example:
+
+```
+          Router
+             |
+          Switch
+      /      |      \
+    PC1     PC2   Printer
+```
+
+If PC1 sends a broadcast:
+
+- PC2 receives it.
+- Printer receives it.
+- Every other device connected to the switch receives it.
+
+---
+
+## Why Broadcast Containment is Needed
+
+If too many devices exist in one broadcast domain:
+
+- Network traffic increases.
+- Bandwidth is wasted.
+- Overall performance decreases.
+
+To reduce unnecessary broadcasts, routers divide a large network into smaller broadcast domains.
+
+---
+
+## ARP (Address Resolution Protocol)
+
+ARP is used to discover the **MAC address** of a device when only its **IPv4 address** is known.
+
+It works only within the local network.
+
+---
+
+## ARP Process
+
+### Step 1: ARP Request
+
+The sender broadcasts:
+
+```
+Who has IP 192.168.100.5?
+Tell 192.168.100.7.
+```
+
+The destination MAC address is:
+
+```
+FF:FF:FF:FF:FF:FF
+```
+
+Every device receives the request.
+
+---
+
+### Step 2: ARP Reply
+
+Only the device whose IP matches replies.
+
+Example:
+
+```
+I am 192.168.100.5.
+
+My MAC address is
+00:1A:2B:3C:4D:5E
+```
+
+The reply is sent directly to the sender.
+
+---
+
+### Step 3: Update ARP Table
+
+The sender stores the mapping:
+
+```
+IP Address              MAC Address
+
+192.168.100.5    →    00:1A:2B:3C:4D:5E
+```
+
+Future communication uses this stored information instead of broadcasting again.
+
+---
+
+## What is an ARP Table?
+
+An **ARP Table** is a cache that stores recently discovered IP-to-MAC mappings.
+
+Benefits:
+
+- Faster communication
+- Fewer broadcasts
+- Reduced network traffic
+
+You can view the ARP table in Linux using:
+
+```bash
+arp -a
+```
+
+or
+
+```bash
+ip neigh
+```
+
+---
+
+## ARP Example
+
+Laptop:
+
+```
+IP: 192.168.100.7
+```
+
+Phone:
+
+```
+IP: 192.168.100.5
+```
+
+Command:
+
+```bash
+ping 192.168.100.5
+```
+
+Communication process:
+
+1. Laptop knows only the phone's IP address.
+2. Laptop sends an ARP Request.
+3. Phone replies with its MAC address.
+4. Laptop stores the MAC address in its ARP table.
+5. Ping packets are sent successfully.
+
+If the phone disconnects from Wi-Fi:
+
+- No ARP reply is received (or the ARP entry eventually becomes invalid).
+- Ping fails with messages like **Destination Host Unreachable** or **Request timed out**.
+
+When the phone reconnects:
+
+- ARP runs again (if needed).
+- Communication resumes.
+
+---
+
+## IPv6 Equivalent
+
+IPv6 does **not** use ARP.
+
+Instead, it uses the **Neighbor Discovery Protocol (NDP)** to discover neighboring devices and their link-layer addresses.
+
+---
+
+## Key Points
+
+- Broadcast messages are sent to every device on the local network.
+- Broadcast MAC Address = **FF:FF:FF:FF:FF:FF**
+- Switches forward broadcasts to all devices in the same broadcast domain.
+- Routers stop broadcasts and create separate broadcast domains.
+- ARP maps an IPv4 address to a MAC address.
+- ARP uses broadcast requests and unicast replies.
+- Discovered MAC addresses are stored in the ARP table.
+- IPv6 uses Neighbor Discovery Protocol (NDP) instead of ARP.
+
+---
+
+# Commands Learned
+
+```bash
+ping <IP Address>      # Test network connectivity
+
+arp -a                 # Display ARP table
+
+ip neigh               # Display neighbor table (Linux)
+```
+
+---
+
+# Important Terms
+
+- MAC Address
+- IP Address
+- Physical Address
+- Logical Address
+- Ethernet Frame
+- Packet
+- Broadcast
+- Broadcast Domain
+- Broadcast MAC Address
+- ARP
+- ARP Request
+- ARP Reply
+- ARP Table
+- Default Gateway
+- Router
+- Switch
+- Neighbor Discovery Protocol (NDP)
+
+# Packet Tracer Activity
+
+Identify MAC and IP Addresses
+![User management](images/day13_activity1.png)
+![User management](images/day13_activity2.png)
+![User management](images/day13_activity3.png)
+![User management](images/day13_activity4.png)
+![User management](images/day13_activity5.png)
