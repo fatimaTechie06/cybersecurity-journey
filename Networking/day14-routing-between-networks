@@ -1,0 +1,697 @@
+# Day 14 - Routing Between Networks
+
+## Topics Covered
+
+Today I learned three important networking topics:
+
+1.  The Need for Routing
+2.  The Routing Table
+3.  Create a LAN
+
+I also completed two Packet Tracer activities and used Simulation Mode
+to observe how devices communicate, including ARP and packet forwarding.
+
+
+
+# 1. The Need for Routing
+
+As a network grows, putting every device into one large local network is
+not always practical. A network can be divided into multiple smaller
+networks.
+
+A **router** is used to connect different IP networks and control
+traffic between them.
+
+## Why do we need routing?
+
+### 1. Broadcast containment
+
+Broadcast traffic should normally remain within the local network.
+
+Routers separate networks into different **broadcast domains**, so a
+broadcast from one network does not automatically travel into another
+network.
+
+Example:
+
+``` text
+Network A
+PC1 ---- Switch ---- Router ---- Switch ---- PC2
+                         |
+                     Network B
+```
+
+A broadcast from PC1 stays inside Network A unless a router is
+specifically configured to forward some type of traffic.
+
+### 2. Security requirements
+
+Different groups of computers may need to be separated for security.
+
+For example:
+
+``` text
+HR Network
+     |
+   Router
+     |
+Finance Network
+```
+
+Separating networks can help control which groups are allowed to
+communicate with each other.
+
+### 3. Physical locations
+
+Routers can connect networks located in different physical locations.
+
+For example, a company may have:
+
+-   Pune office
+-   Mumbai office
+-   Delhi office
+
+Each office can have its own local network, while routers connect those
+networks.
+
+### 4. Logical grouping
+
+Networks can also be divided according to departments or user groups.
+
+For example:
+
+``` text
+Accounting Network
+Finance Network
+Sales Network
+```
+
+This makes the network easier to organize and manage.
+
+## How does a router make a decision?
+
+A switch mainly uses **MAC addresses** at Layer 2.
+
+A router makes forwarding decisions using **IP addresses** at Layer 3.
+
+If the source and destination are on different IP networks, a router is
+required.
+
+### Simple example
+
+Suppose:
+
+``` text
+PC1 IP: 192.168.1.10
+PC2 IP: 192.168.2.10
+```
+
+These are different networks.
+
+Therefore:
+
+``` text
+PC1 → Switch → Router → Switch → PC2
+```
+
+The router examines the destination IP address and determines where to
+send the packet.
+
+
+# 2. The Routing Table
+
+A **routing table** is a table maintained by a router that contains
+information about networks and how to reach them.
+
+Each router interface can connect to a different network.
+
+For example:
+
+``` text
+             Router
+           /        \
+          /          \
+192.168.1.0/24    192.168.2.0/24
+     |                  |
+   LAN A              LAN B
+```
+
+The router knows that:
+
+-   `192.168.1.0/24` is reachable through one interface.
+-   `192.168.2.0/24` is reachable through another interface.
+
+## How routing works
+
+When a router receives a frame:
+
+1.  It removes the Layer 2 Ethernet information.
+2.  It examines the IP packet.
+3.  It checks the destination IP address.
+4.  It compares the destination network with entries in its routing
+    table.
+5.  It selects the appropriate path.
+6.  It creates a new Layer 2 frame.
+7.  It forwards the packet through the correct interface.
+
+This process is called **routing**.
+
+## Two possible destinations
+
+A router can forward a packet to:
+
+### 1. A directly connected network
+
+The destination network is directly connected to one of the router's
+interfaces.
+
+``` text
+Router → Destination Network → Destination Host
+```
+
+### 2. Another router
+
+If the destination network is farther away, the router sends the packet
+to another router.
+
+``` text
+Router 1 → Router 2 → Router 3 → Destination Network
+```
+
+## Destination MAC address
+
+When the router sends a frame out of an interface, it needs a
+destination MAC address.
+
+If the next device is another router, the destination MAC address
+belongs to that next-hop router.
+
+Routers can use their **ARP table** to find the MAC address associated
+with an IPv4 address.
+
+------------------------------------------------------------------------
+
+# Default Gateway
+
+A **default gateway** is normally the router interface connected to the
+same local network as a host.
+
+For example:
+
+``` text
+PC IP:       192.168.2.2
+Subnet Mask: 255.255.255.0
+Gateway:     192.168.2.1
+```
+
+If the PC wants to communicate with a device outside its local network,
+it sends the traffic to the default gateway.
+
+Example:
+
+``` text
+PC
+ |
+ | Destination is outside local network
+ v
+Default Gateway / Router
+ |
+ v
+Other Network
+```
+
+The default gateway is therefore very important for communication
+between different networks.
+
+------------------------------------------------------------------------
+
+# 3. Create a LAN
+
+A **LAN (Local Area Network)** is a local network, or a group of
+interconnected local networks under the same administrative control.
+
+LANs commonly use:
+
+-   Ethernet
+-   Wi-Fi
+
+They usually provide high data rates over a relatively limited area.
+
+## One large local network
+
+All hosts can be placed in one local network.
+
+For example:
+
+``` text
+PC1
+ |
+PC2 ---- Switch
+ |
+PC3
+```
+
+Because the devices are in the same local network, they can communicate
+directly using Layer 2 communication and ARP for IPv4 address
+resolution.
+
+## Multiple networks inside a LAN
+
+A larger LAN can be divided into multiple networks.
+
+For example:
+
+``` text
+             Router
+          /    |     \
+         /     |      \
+ Accounting  Finance  Sales
+  Network    Network  Network
+```
+
+This can improve organization and reduce the impact of broadcast
+traffic.
+
+However, devices in different networks require routing to communicate.
+
+## Advantages and disadvantages
+
+### Single local network
+
+**Advantages:** - Simple configuration - Hosts can communicate
+directly - Less routing configuration
+
+**Disadvantages:** - Larger broadcast domain - Broadcast traffic can
+increase as the network grows - Less separation between groups
+
+### Multiple local networks
+
+**Advantages:** - Smaller broadcast domains - Better organization -
+Easier to separate departments - Can improve security and traffic
+management
+
+**Disadvantages:** - Requires routing - More configuration - Can
+introduce some additional latency
+
+------------------------------------------------------------------------
+
+# Packet Tracer Activity 1 - XYZ LLC Network
+
+## Network topology
+
+The first Packet Tracer activity represented a company called **XYZ
+LLC**.
+
+The topology contained:
+
+-   Edge router
+-   ISP
+-   Web server
+-   Accounting switch
+-   Finance switch
+-   Sales switch
+-   Accounting PCs
+-   Finance PCs
+-   Sales PCs
+
+The company was divided into three departments:
+
+``` text
+                 Edge Router
+                     |
+                    ISP
+                     |
+                 Web Server
+              209.165.200.112
+
+                     |
+        ---------------------------
+        |            |            |
+   Accounting     Finance       Sales
+     Switch        Switch       Switch
+      /  \           /  \         /  \
+     PC  PC         PC  PC       PC  PC
+```
+
+The topology demonstrated how multiple local networks can be connected
+through a router and then reach an external network.
+
+## What I observed
+
+I used Packet Tracer's **Simulation Mode** to observe the communication
+between devices.
+
+The simulation displayed the movement of PDUs through the network and
+allowed me to inspect information at different OSI layers.
+
+------------------------------------------------------------------------
+
+## ARP communication
+
+One important thing I observed was an **ARP request**.
+
+The sending device did not initially know the destination MAC address,
+so it used ARP to discover it.
+
+The ARP process was:
+
+``` text
+1. Sender knows destination IPv4 address.
+              |
+              v
+2. Sender sends an ARP Request
+   to the broadcast MAC address.
+              |
+              v
+3. Devices on the local network receive the broadcast.
+              |
+              v
+4. The device with the matching IPv4 address
+   sends an ARP Reply containing its MAC address.
+              |
+              v
+5. Sender stores the information in its ARP table.
+```
+
+In the simulation, I could see the Ethernet frame containing the ARP
+request and the broadcast destination.
+
+------------------------------------------------------------------------
+
+## Broadcast in the simulation
+
+The simulation showed that an ARP request can be sent as a broadcast.
+
+The destination was shown as:
+
+``` text
+Destination: Broadcast
+```
+
+At Layer 2, the broadcast MAC address is:
+
+``` text
+FFFF.FFFF.FFFF
+```
+
+A switch forwards a broadcast frame to the other connected ports within
+the local broadcast domain.
+
+This helped me understand why a LAN is also considered a **broadcast
+domain**.
+
+------------------------------------------------------------------------
+
+## OSI layers observed
+
+The PDU information window showed details such as:
+
+-   Layer 2: Ethernet II
+-   Layer 1: FastEthernet
+-   Source and destination MAC addresses
+-   Source and destination IP addresses
+-   ARP information
+
+This helped connect the theory of the OSI model with an actual packet
+simulation.
+
+------------------------------------------------------------------------
+
+# Packet Tracer Activity 2 - Branch Office Network
+
+## Network topology
+
+The second activity represented a small branch office.
+
+The topology contained:
+
+-   Office Router
+-   Switch
+-   Admin PC
+-   Manager PC
+-   Printer
+-   Internet
+-   Web server (`www.cisco.pt`)
+
+The basic structure was:
+
+``` text
+              Office Router
+                   |
+                 Switch
+              /    |    \
+        Admin PC Manager PC Printer
+                   |
+                Internet
+                   |
+              Web Server
+```
+
+The router connected the local branch-office LAN to the Internet.
+
+------------------------------------------------------------------------
+
+## IP configuration observed
+
+One of the PCs, **Finance 1**, had the following configuration in the
+other Packet Tracer simulation:
+
+``` text
+IP Address:       192.168.2.2
+Subnet Mask:      255.255.255.0
+Default Gateway:  192.168.2.1
+DNS Server:       0.0.0.0
+```
+
+This helped demonstrate the role of the default gateway.
+
+The gateway address `192.168.2.1` represents the router interface on
+that local network.
+
+------------------------------------------------------------------------
+
+# What I Learned from the Simulations
+
+The simulations made the theory much easier to understand because I
+could actually watch the communication happen.
+
+## 1. IP address and MAC address have different jobs
+
+I understood that:
+
+-   **IP address** identifies the logical destination.
+-   **MAC address** is used for delivery on the local Ethernet network.
+
+A host may know the destination IP address but still need the
+destination MAC address before it can send an Ethernet frame on the
+local network.
+
+------------------------------------------------------------------------
+
+## 2. ARP connects IP addressing with MAC addressing
+
+The simulation helped me understand ARP more clearly.
+
+For IPv4:
+
+``` text
+Known:
+Destination IP
+
+Need:
+Destination MAC
+
+Solution:
+ARP
+```
+
+The sender broadcasts an ARP request, the device with the matching IP
+responds with its MAC address, and the sender stores the information in
+its ARP table.
+
+------------------------------------------------------------------------
+
+## 3. Broadcast stays within a broadcast domain
+
+The ARP request was sent as a broadcast.
+
+This demonstrated that switches forward broadcasts within the local
+broadcast domain.
+
+Routers are used to separate broadcast domains.
+
+So:
+
+``` text
+Switch → forwards local broadcasts
+Router → separates broadcast domains
+```
+
+------------------------------------------------------------------------
+
+## 4. Routing is needed between different IP networks
+
+If two devices are in the same IP network, they can communicate directly
+at the local network level.
+
+If they are in different IP networks, the traffic needs to go through a
+router.
+
+Example:
+
+``` text
+192.168.1.10
+     |
+   Switch
+     |
+   Router
+     |
+   Switch
+     |
+192.168.2.10
+```
+
+This is why routers are essential for communication between different
+networks.
+
+------------------------------------------------------------------------
+
+## 5. The default gateway is the way out of the local network
+
+The default gateway is the router interface connected to the host's
+local network.
+
+If a host wants to reach another network, it sends the traffic to the
+default gateway.
+
+``` text
+Host
+ |
+ v
+Default Gateway
+ |
+ v
+Other Network
+```
+
+------------------------------------------------------------------------
+
+## 6. A router makes decisions using IP addresses
+
+I reinforced the difference between switches and routers:
+
+  Device   Main Layer   Main Address Used
+  -------- ------------ -------------------
+  Switch   Layer 2      MAC address
+  Router   Layer 3      IP address
+
+A switch decides where to forward Ethernet frames based mainly on MAC
+addresses.
+
+A router examines the destination IP address and uses its routing table
+to determine the next hop.
+
+------------------------------------------------------------------------
+
+## 7. Packet Tracer Simulation Mode is useful for learning
+
+Simulation Mode allowed me to slow down the communication and inspect
+each event.
+
+Instead of only seeing:
+
+``` text
+PC → PC
+```
+
+I could see what was actually happening:
+
+``` text
+ARP Request
+     ↓
+Broadcast
+     ↓
+ARP Reply
+     ↓
+MAC address learned
+     ↓
+Ethernet frame
+     ↓
+Packet forwarded
+```
+
+This made the concepts of ARP, MAC addresses, IP addresses, broadcasts,
+and routing much clearer.
+
+------------------------------------------------------------------------
+
+# Quick Revision
+
+## The Need for Routing
+
+-   Large networks can be divided into smaller networks.
+-   Routers connect different IP networks.
+-   Routers separate broadcast domains.
+-   Routing can help with security, physical locations, and logical
+    grouping.
+-   Routers make forwarding decisions using IP addresses.
+
+## Routing Table
+
+-   A router maintains a routing table.
+-   The table contains known networks and paths to them.
+-   The router checks the destination IP.
+-   It selects the best available path.
+-   The packet may be sent directly to a connected network or to another
+    router.
+-   The default gateway is the router used by a host to reach other
+    networks.
+
+## Create a LAN
+
+-   LAN means Local Area Network.
+-   LANs can contain one or multiple local networks.
+-   A single LAN can have one broadcast domain.
+-   Dividing a LAN into multiple networks reduces broadcast scope.
+-   Communication between different IP networks requires routing.
+
+## Packet Tracer
+
+-   Used Simulation Mode to observe network communication.
+-   Observed ARP requests and broadcasts.
+-   Inspected Ethernet and IP information.
+-   Observed MAC addresses and IP addresses in PDUs.
+-   Practiced understanding default gateways and routing.
+-   Connected the theory from the networking lessons to practical
+    network behavior.
+
+------------------------------------------------------------------------
+
+# Day 14 Summary
+
+Today I learned how routers are used to connect different networks, how
+routing tables help routers choose paths, and how LANs can be designed
+as one or multiple local networks.
+
+The two Packet Tracer activities helped me understand these concepts
+practically. The most useful part was using Simulation Mode to inspect
+ARP requests, broadcast frames, MAC addresses, IP addresses, and the
+movement of PDUs through the network.
+
+**Main takeaway:**
+
+> IP tells the network where the packet needs to go, while MAC addresses
+> help deliver the frame on the current local network. ARP helps
+> discover the required MAC address, and routers are responsible for
+> moving traffic between different IP networks.
+
+# Screenshots of Activities
+
+![User management](images/day14_act1.1)
+![User management](images/day14_act1.2)
+![User management](images/day14_act1.3)
+![User management](images/day14_act1.4)
+![User management](images/day14_act1.5)
+![User management](images/day14_act1.6)
+![User management](images/day14_act1.7)
+![User management](images/day14_act2.1)
