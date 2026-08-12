@@ -1,4 +1,4 @@
-# cybersecurity-notes
+# cybersecurity-journey
 A repo that shows all the things I am learning about cybersecurity
 
 Hey there techies! this is my journey towards cybersecurity.
