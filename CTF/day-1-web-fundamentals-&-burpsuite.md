@@ -156,5 +156,3 @@ Analyze Response
 Today I built the foundation for web application security testing by learning how HTTP works and how Burp Suite can be used to inspect and modify web traffic.
 
 I also successfully configured **Firefox with Burp Suite**, intercepted real HTTP traffic, used **HTTP History**, and performed my first request modification using **Repeater**.
-
----
