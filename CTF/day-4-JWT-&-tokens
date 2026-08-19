@@ -1,0 +1,211 @@
+# Day 4: JWT & Tokens
+
+Focus: JSON Web Tokens (JWT), Token-Based Authentication, JWT Security, and Burp Suite
+
+## Objectives
+
+- Understand what JSON Web Tokens (JWTs) are.
+- Understand the three components of a JWT.
+- Learn about JWT headers, payloads, claims, and signatures.
+- Understand Base64URL encoding.
+- Differentiate encoding, encryption, and signing.
+- Identify JWTs in HTTP requests.
+- Inspect and decode JWTs using Burp Suite.
+- Understand common JWT implementation weaknesses.
+- Practice JWT authentication attacks in controlled labs.
+
+## Concepts Learned
+
+1. What is JWT?
+
+JWT stands for JSON Web Token.
+
+It is a compact token format commonly used to transmit information between parties and can be used for authentication and authorization.
+
+A JWT generally has three parts separated by periods:
+
+HEADER.PAYLOAD.SIGNATURE
+
+Example structure:
+
+xxxxx.yyyyy.zzzzz
+
+2. JWT Header
+
+The header contains metadata about the token.
+
+Example:
+
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+Common fields include:
+
+alg → Signing algorithm
+typ → Token type
+
+3. JWT Payload
+
+The payload contains claims, which are pieces of information about the token, user, or authentication context.
+
+Example:
+
+{
+  "sub": "123",
+  "username": "wiener",
+  "role": "user",
+  "iat": 1720000000
+}
+
+Common claims include:
+
+Claim	Meaning
+sub	Subject
+iss	Issuer
+aud	Audience
+exp	Expiration time
+iat	Issued-at time
+nbf	Not-before time
+
+Claims can provide information that the application uses when processing the token.
+
+4. JWT Signature
+
+The third component is the cryptographic signature.
+
+Conceptually:
+
+Header
+   +
+Payload
+   ↓
+Signing process
+   ↓
+Signature
+
+The signature is intended to provide integrity and allow the server to verify that the token has not been modified and was produced according to the expected signing process.
+
+5. Base64URL Encoding
+
+JWT headers and payloads are commonly encoded using Base64URL.
+
+This means that the encoded header and payload can generally be decoded without a secret key.
+
+Therefore:
+
+A JWT payload should not be treated as encrypted or confidential merely because it is inside a JWT.
+
+Sensitive information should not be placed in a JWT payload unless appropriate protections are in place.
+
+6. Encoding vs Encryption vs Signing
+
+These concepts are different.
+
+Encoding
+Data
+ ↓
+Encoding
+ ↓
+Encoded data
+
+Encoding is intended to represent data in another format and does not provide confidentiality.
+
+Encryption
+Plaintext
+ ↓
+Encryption + Key
+ ↓
+Ciphertext
+
+Encryption is used to provide confidentiality.
+
+Signing
+Data
+ ↓
+Cryptographic signing
+ ↓
+Signature
+
+Signing is used to provide integrity and authenticity.
+
+A typical JWT uses encoded header/payload data together with a cryptographic signature.
+
+## Burp Suite Practice
+
+During today's exercises, Burp Suite was used to investigate JWT-based authentication.
+
+Workflow
+Application
+    ↓
+HTTP Request
+    ↓
+Burp Proxy / HTTP History
+    ↓
+Identify JWT
+    ↓
+Inspect Token
+    ↓
+Decode Header & Payload
+    ↓
+Send Request to Repeater
+    ↓
+Investigate JWT Validation
+
+Practiced:
+
+- Identifying JWTs in HTTP requests.
+- Inspecting JWT structure.
+- Decoding JWT contents.
+- Examining claims.
+- Sending JWT-containing requests to Repeater.
+- Investigating how the server validates JWTs.
+
+## PortSwigger Labs Completed
+
+Successfully completed both JWT authentication labs:
+
+ - JWT authentication bypass via unverified signature
+ - JWT authentication bypass via flawed signature verification
+
+These labs provided practical experience with weaknesses in JWT signature verification.
+
+## JWT Authentication Weaknesses
+
+- A JWT is not secure simply because it contains a signature.
+
+- The application must correctly validate the token.
+
+- Important questions when analyzing JWT authentication include:
+
+Where did the token come from?
+        ↓
+Who issued it?
+        ↓
+What does the payload contain?
+        ↓
+Which algorithm is being used?
+        ↓
+Is the signature actually verified?
+        ↓
+Are the claims trusted?
+        ↓
+Does the server properly validate the token?
+
+- Incorrect implementation of these checks can result in authentication bypasses.
+
+## Key Takeaways
+
+- JWT stands for JSON Web Token.
+- A JWT generally consists of a header, payload, and signature.
+- The payload contains claims.
+- JWT header and payload data are commonly Base64URL encoded.
+- Encoding does not provide confidentiality.
+- Encryption and signing serve different security purposes.
+- A JWT's security depends heavily on proper server-side validation.
+- The presence of a signature does not automatically mean the application is securely validating it.
+- Burp Suite can be used to inspect and investigate JWT-based authentication.
+- When analyzing a JWT, it is important to understand what the application trusts and how it verifies the token.
+
+--- 
