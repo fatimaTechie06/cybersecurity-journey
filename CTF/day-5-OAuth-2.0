@@ -1,0 +1,304 @@
+# Day 5: OAuth 2.0
+
+Focus: OAuth 2.0, Authorization Flow, Tokens, OAuth Parameters, and Burp Suite
+
+## Objectives
+-Understand the purpose of OAuth 2.0.
+-Understand the difference between authentication and authorization.
+-Learn the main components of OAuth.
+-Understand the OAuth authorization flow.
+-Learn about authorization codes and access tokens.
+-Understand important OAuth parameters.
+-Analyze an OAuth flow using Burp Suite.
+-Complete a beginner-level OAuth security lab.
+
+## Concepts Learned
+
+1. What is OAuth 2.0?
+
+OAuth 2.0 is an authorization framework that allows an application to obtain limited access to resources on behalf of a user without requiring the application to know the user's password.
+
+A simplified example:
+
+User
+  ↓
+Application requests access
+  ↓
+Authorization Server
+  ↓
+User authenticates and gives consent
+  ↓
+Authorization Code / Token
+  ↓
+Application
+  ↓
+Accesses permitted resources
+
+OAuth is primarily concerned with authorization, rather than authentication.
+
+2. OAuth vs Authentication
+Authentication
+
+Answers:
+
+Who are you?
+
+It verifies the identity of a user.
+
+Authorization
+
+Answers:
+
+What are you allowed to access?
+
+It determines what resources or actions a user is permitted to access.
+
+OAuth 2.0 is primarily an authorization framework.
+
+## OAuth Components
+
+OAuth commonly involves four main roles.
+
+1. Resource Owner
+
+Usually the user who owns the protected data.
+
+Resource Owner = User
+
+2. Client
+
+The application requesting access to protected resources.
+
+Example:
+
+PhotoApp
+
+3. Authorization Server
+
+The server responsible for handling authorization and issuing authorization codes or tokens.
+
+4. Resource Server
+
+The server that hosts the protected resources and accepts valid access tokens.
+
+Simplified:
+
+Resource Owner
+      ↓
+    Client
+      ↓
+Authorization Server
+      ↓
+  Access Token
+      ↓
+Resource Server
+
+## OAuth Authorization Code Flow
+
+The authorization code flow can be represented as:
+
+User
+ ↓
+Client
+ ↓
+Authorization Server
+ ↓
+User Login / Consent
+ ↓
+Authorization Code
+ ↓
+Client
+ ↓
+Token Exchange
+ ↓
+Access Token
+ ↓
+Resource Server
+ ↓
+Protected Resource
+
+3. Authorization Request
+
+The client can send an authorization request containing parameters such as:
+
+GET /authorize?
+    client_id=123
+    &redirect_uri=https://client.example/callback
+    &response_type=code
+    &scope=read
+    &state=xyz
+
+Important parameters include:
+
+Parameter	     Purpose
+client_id	    Identifies the OAuth client
+redirect_uri	Specifies where the authorization response should be sent
+response_type	Specifies the requested OAuth response type
+scope	        Specifies the requested permissions
+state	        Helps maintain state and protect the authorization flow
+
+4. Client ID
+
+The client_id identifies the application requesting authorization.
+
+Example:
+
+client_id=12345
+
+It answers:
+
+Which application is requesting access?
+
+5. Redirect URI
+
+The redirect_uri specifies where the authorization server sends the authorization response.
+
+Example:
+
+redirect_uri=https://client.example/callback
+
+After authorization, the server may redirect the user to:
+
+https://client.example/callback?code=ABC123
+
+The redirect URI is particularly important from a security perspective because improper validation can lead to OAuth vulnerabilities.
+
+6. Response Type
+
+For an authorization code flow:
+
+response_type=code
+
+This tells the authorization server that the client expects an authorization code.
+
+7. Authorization Code
+
+The authorization code is a temporary credential returned after successful authorization.
+
+Example:
+
+https://client.example/callback?code=ABC123
+
+The client can then exchange this code for an access token.
+
+Conceptually:
+
+Authorization Code
+        ↓
+Token Endpoint
+        ↓
+Access Token
+
+8. Access Token
+
+An access token allows the client to access protected resources according to the granted permissions.
+
+Example:
+
+GET /api/profile HTTP/2
+
+
+Authorization: Bearer ACCESS_TOKEN
+
+Simplified:
+
+Client
+  ↓
+Access Token
+  ↓
+Resource Server
+  ↓
+Protected Resource
+
+9. Scope
+
+The scope parameter defines the permissions being requested.
+
+Example:
+
+scope=read
+
+or:
+
+scope=read profile email
+
+A useful way to remember it:
+
+Scope = permissions being requested.
+
+Applications should request only the permissions they actually need.
+
+10. State Parameter
+
+The state parameter is used to maintain state between the authorization request and response.
+
+Example:
+
+Client
+  ↓
+state=ABC123
+  ↓
+Authorization Server
+  ↓
+Redirect
+  ↓
+state=ABC123
+  ↓
+Client verifies the value
+
+The client should properly validate the returned state value.
+
+Improper handling of state can create security issues in OAuth implementations.
+
+## Burp Suite Practice
+
+Used Burp Suite to investigate an OAuth authorization flow.
+
+Workflow
+Application
+    ↓
+OAuth Authorization Request
+    ↓
+Burp Proxy / HTTP History
+    ↓
+Inspect OAuth Parameters
+    ↓
+Follow Redirects
+    ↓
+Identify Authorization Code
+    ↓
+Token Exchange
+    ↓
+Access Token
+
+* Practiced identifying:
+
+client_id
+redirect_uri
+response_type
+scope
+state
+Authorization code
+Access token
+
+## PortSwigger Lab Completed
+
+Successfully completed:
+
+ Authentication bypass via OAuth implicit flow
+
+The lab provided practical experience with OAuth authorization and how weaknesses in OAuth implementations can affect authentication.
+
+## Key Takeaways
+
+-OAuth 2.0 is primarily an authorization framework.
+-Authentication and authorization are different concepts.
+-OAuth involves the Resource Owner, Client, Authorization Server, and Resource Server.
+-The authorization code is an intermediate credential that can be exchanged for an access token.
+-Access tokens are used to access protected resources.
+-scope defines the permissions being requested.
+-redirect_uri determines where the authorization response is sent and must be properly validated.
+-state helps protect the OAuth authorization flow and should be properly validated.
+-Burp Suite can be used to map and investigate OAuth flows.
+-Understanding the normal OAuth flow is essential before attempting to identify OAuth vulnerabilities.
+
